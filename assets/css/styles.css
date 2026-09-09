@@ -353,6 +353,14 @@ body.intro-done .site-header { opacity: 1; transform: none; }
 }
 .site-nav a:hover, .site-nav a:focus-visible, .site-nav a.is-current { color: var(--ink); }
 .site-nav a:hover::after, .site-nav a:focus-visible::after, .site-nav a.is-current::after { right: 0; }
+.site-nav a .arrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72em;
+  color: var(--clay);
+  transition: transform 0.3s var(--ease);
+}
+.site-nav a:hover .arrow, .site-nav a:focus-visible .arrow { transform: translate(3px, -3px); }
 
 /* 6 ── HERO (glitch wordmark over a drifting pixel leopard print) ─────────── */
 .hero {

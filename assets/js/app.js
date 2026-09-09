@@ -39,7 +39,10 @@
     var nav = $("#siteNav");
     if (!nav || !SITE.nav) return;
     nav.innerHTML = SITE.nav.map(function (item) {
-      return '<a href="' + esc(item.href) + '">' + esc(item.label) + "</a>";
+      var ext = /^https?:/.test(item.href);
+      return '<a href="' + esc(item.href) + '"' +
+        (ext ? ' target="_blank" rel="noopener"' : "") + ">" + esc(item.label) +
+        (ext ? ' <span class="arrow" aria-hidden="true">&#8599;</span>' : "") + "</a>";
     }).join("");
 
     var wm = $("#wordmark");

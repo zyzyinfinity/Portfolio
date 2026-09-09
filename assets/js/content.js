@@ -47,9 +47,10 @@ window.SITE = {
 
   /* --- navigation ------------------------------------------------------------ */
   nav: [
-    { label: "about",    href: "#about" },
-    { label: "projects", href: "#projects" },
-    { label: "contact",  href: "#contact" },
+    { label: "about",       href: "#about" },
+    { label: "securescope", href: "https://securescope.ishzati.com" },
+    { label: "projects",    href: "#projects" },
+    { label: "contact",     href: "#contact" },
   ],
 
   /* --- hero / identity -------------------------------------------------------
