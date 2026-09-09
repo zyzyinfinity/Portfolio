@@ -133,7 +133,7 @@
     (d.tech || []).forEach(function (t) { meta.push("<span>" + esc(t) + "</span>"); });
 
     var cta = d.link
-      ? '<a class="btn-line" href="' + esc(d.link) + '">' + esc(d.linkLabel || "view project") +
+      ? '<a class="btn-line" href="' + esc(d.link) + '" target="_blank" rel="noopener">' + esc(d.linkLabel || "view project") +
         ' <span class="arrow" aria-hidden="true">&rarr;</span></a>'
       : "";
 

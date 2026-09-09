@@ -93,8 +93,8 @@ window.SITE = {
     tech: ["Next.js", "FastAPI", "PostgreSQL", "LLM", "Burp Suite"],
     status: "in progress",
     year: "2025",
-    link: "",
-    linkLabel: "view on github",
+    link: "https://securescope.ishzati.com",
+    linkLabel: "open securescope",
   },
 
   /* --- the globe / "going global" section ---------------------------------
