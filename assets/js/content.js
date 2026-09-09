@@ -47,10 +47,9 @@ window.SITE = {
 
   /* --- navigation ------------------------------------------------------------ */
   nav: [
-    { label: "about",       href: "#about" },
-    { label: "securescope", href: "https://securescope.ishzati.com" },
-    { label: "projects",    href: "#projects" },
-    { label: "contact",     href: "#contact" },
+    { label: "about",    href: "#about" },
+    { label: "projects", href: "#projects" },
+    { label: "contact",  href: "#contact" },
   ],
 
   /* --- hero / identity -------------------------------------------------------
@@ -78,26 +77,6 @@ window.SITE = {
     ],
   },
 
-  /* --- SecureScope (flagship — its own section) -----------------------------
-     pipeline : the steps shown as a connected flow (add / remove freely)
-     link     : "" hides the button                                            */
-  securescope: {
-    kicker: "flagship project",
-    heading: "SECURESCOPE",
-    lede: "An AI-assisted web security assessment platform. Recon, scanning and reporting stitched into one calm workflow instead of forty open tabs.",
-    pipeline: [
-      { step: "recon",  note: "surface mapping, subdomains, tech fingerprinting" },
-      { step: "scan",   note: "guided checks against the OWASP Top 10" },
-      { step: "assist", note: "an LLM that explains each finding in plain words" },
-      { step: "report", note: "one clean export, ready to hand over" },
-    ],
-    tech: ["Next.js", "FastAPI", "PostgreSQL", "LLM", "Burp Suite"],
-    status: "in progress",
-    year: "2025",
-    link: "https://securescope.ishzati.com",
-    linkLabel: "open securescope",
-  },
-
   /* --- the globe / "going global" section ---------------------------------
      A rotating dotted globe with signal arcs. Sits on the one dark panel.
      labels : the little metadata strings around the visual                    */
@@ -115,13 +94,27 @@ window.SITE = {
     },
   },
 
-  /* --- projects (a digital archive — SecureScope has its own section above) - */
+  /* --- projects -----------------------------------------------------------
+     Each project is a card. Set `link` to make the card clickable — a full
+     URL (https://…) opens in a new tab. `image` is an optional preview
+     (drop the file in assets/img/ and point to it). `muted: true` greys a
+     card out for things that aren't started yet.                             */
   projects: {
     kicker: "selected work",
     heading: "THE ARCHIVE",
     items: [
       {
         no: "01",
+        name: "SecureScope",
+        description: "An AI-assisted web security assessment platform. Recon, scanning and reporting stitched into one calm workflow instead of forty open tabs.",
+        tech: ["Next.js", "FastAPI", "PostgreSQL", "LLM", "Burp Suite"],
+        year: "2025",
+        status: "in progress",
+        link: "https://securescope.ishzati.com",
+        image: "",
+      },
+      {
+        no: "02",
         name: "Nightjar",
         description: "A running notebook of CTF write-ups and the small exploit tooling I keep reaching for.",
         tech: ["Python", "pwntools", "Docker"],
@@ -131,7 +124,7 @@ window.SITE = {
         image: "",
       },
       {
-        no: "02",
+        no: "03",
         name: "Soft Perimeter",
         description: "A study of web authentication flaws, learned by building small, deliberately broken apps and then fixing them.",
         tech: ["Node.js", "JWT", "OWASP"],
@@ -141,7 +134,7 @@ window.SITE = {
         image: "",
       },
       {
-        no: "03",
+        no: "04",
         name: "untitled",
         description: "Something with hardware and radio. Still forming.",
         tech: [],

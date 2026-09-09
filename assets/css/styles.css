@@ -353,14 +353,6 @@ body.intro-done .site-header { opacity: 1; transform: none; }
 }
 .site-nav a:hover, .site-nav a:focus-visible, .site-nav a.is-current { color: var(--ink); }
 .site-nav a:hover::after, .site-nav a:focus-visible::after, .site-nav a.is-current::after { right: 0; }
-.site-nav a .arrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.72em;
-  color: var(--clay);
-  transition: transform 0.3s var(--ease);
-}
-.site-nav a:hover .arrow, .site-nav a:focus-visible .arrow { transform: translate(3px, -3px); }
 
 /* 6 ── HERO (glitch wordmark over a drifting pixel leopard print) ─────────── */
 .hero {
@@ -917,86 +909,6 @@ body.intro-done .status-badge { opacity: 0.5; }
   -webkit-text-fill-color: #FF7ABF;
   animation: caretblink 1.05s ease-in-out infinite;
 }
-
-/* 12c ── SECURESCOPE (flagship) ─────────────────────────────────────────── */
-
-.ss__lede {
-  font-family: var(--font-body);
-  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.12rem);
-  line-height: 1.75;
-  color: var(--ink);
-  max-width: 52ch;
-  margin-bottom: clamp(2.5rem, 6vh, 4rem);
-}
-
-.pipe {
-  list-style: none;
-  display: grid;
-  gap: clamp(1.6rem, 4vw, 2.75rem);
-}
-@media (min-width: 760px) { .pipe { grid-template-columns: repeat(4, 1fr); } }
-
-.pipe__step {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-.pipe__node { width: 15px; height: 15px; color: var(--spot); opacity: 0.8; margin-bottom: 0.15rem; }
-.pipe__name {
-  font-family: var(--font-pixel);
-  font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: lowercase;
-  color: var(--ink);
-}
-.pipe__note {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  line-height: 1.65;
-  color: var(--cocoa);
-}
-
-.ss__foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.6rem;
-  margin-top: 2rem;
-}
-.ss__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem;
-  font-family: var(--font-pixel);
-  font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.03em;
-  text-transform: lowercase;
-  color: var(--cocoa);
-}
-.ss__status { color: var(--clay); }
-.ss__dot { opacity: 0.4; }
-
-.btn-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-pixel);
-  font-weight: 400;
-  font-size: 0.82rem;
-  letter-spacing: 0.03em;
-  text-transform: lowercase;
-  color: var(--clay);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-}
-.btn-line .arrow { transition: transform 0.3s var(--ease); }
-.btn-line:hover .arrow, .btn-line:focus-visible .arrow { transform: translateX(4px); }
 
 /* 12d ── GLOBE / GOING GLOBAL ───────────────────────────────────────────── */
 .globe__wrap {

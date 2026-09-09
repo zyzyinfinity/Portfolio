@@ -39,10 +39,7 @@
     var nav = $("#siteNav");
     if (!nav || !SITE.nav) return;
     nav.innerHTML = SITE.nav.map(function (item) {
-      var ext = /^https?:/.test(item.href);
-      return '<a href="' + esc(item.href) + '"' +
-        (ext ? ' target="_blank" rel="noopener"' : "") + ">" + esc(item.label) +
-        (ext ? ' <span class="arrow" aria-hidden="true">&#8599;</span>' : "") + "</a>";
+      return '<a href="' + esc(item.href) + '">' + esc(item.label) + "</a>";
     }).join("");
 
     var wm = $("#wordmark");
@@ -116,43 +113,6 @@
       "</div>";
   }
 
-  /* ---- SECURESCOPE (flagship) --------------------------------------------- */
-  function renderSecureScope() {
-    var el = $("#securescope");
-    var d = SITE.securescope;
-    if (!el || !d) { if (el) el.remove(); return; }
-
-    var steps = (d.pipeline || []).map(function (p, i) {
-      return '<li class="pipe__step reveal" style="--i:' + i + '">' +
-        leo("pipe__node") +
-        '<span class="pipe__name">' + esc(p.step) + "</span>" +
-        '<span class="pipe__note">' + esc(p.note) + "</span>" +
-      "</li>";
-    }).join("");
-
-    var meta = [];
-    if (d.status) meta.push('<span class="ss__status">' + esc(d.status) + "</span>");
-    if (d.year) meta.push("<span>" + esc(d.year) + "</span>");
-    (d.tech || []).forEach(function (t) { meta.push("<span>" + esc(t) + "</span>"); });
-
-    var cta = d.link
-      ? '<a class="btn-line" href="' + esc(d.link) + '" target="_blank" rel="noopener">' + esc(d.linkLabel || "view project") +
-        ' <span class="arrow" aria-hidden="true">&rarr;</span></a>'
-      : "";
-
-    el.innerHTML =
-      '<div class="wrap">' +
-        kicker(d.kicker || "flagship project") +
-        '<h2 class="section__head reveal" id="securescopeHeading">' + esc(d.heading || "SecureScope") + "</h2>" +
-        (d.lede ? '<p class="ss__lede reveal">' + esc(d.lede) + "</p>" : "") +
-        '<ol class="pipe">' + steps + "</ol>" +
-        '<div class="ss__foot reveal">' +
-          '<p class="ss__meta">' + meta.join('<span class="ss__dot">&middot;</span>') + "</p>" +
-          cta +
-        "</div>" +
-      "</div>";
-  }
-
   /* ---- GLOBE ------------------------------------------------------------- */
   function renderGlobe() {
     var el = $("#globe");
@@ -212,8 +172,10 @@
       var desc = p.description ? '<p class="project__desc">' + esc(p.description) + "</p>" : "";
       var tech = (p.tech && p.tech.length)
         ? '<p class="project__tech">' + p.tech.map(esc).join(" &middot; ") + "</p>" : "";
+      var ext = isLink && /^https?:/.test(p.link);
       var cta = isLink
-        ? '<a class="project__cta" href="' + esc(p.link) + '" aria-label="View project: ' + esc(p.name) +
+        ? '<a class="project__cta" href="' + esc(p.link) + '"' + (ext ? ' target="_blank" rel="noopener"' : "") +
+          ' aria-label="View project: ' + esc(p.name) +
           '">view project <span class="arrow" aria-hidden="true">&rarr;</span></a>'
         : (p.muted ? "" : '<span class="project__cta project__cta--static">' + esc(p.status || "in progress") + "</span>");
       var media = p.image
@@ -284,8 +246,8 @@
 
   /* ---- DIVIDERS (a single leopard mark on a hairline, used sparingly) ---- */
   function insertDividers() {
-    [["#about", "#securescope"], ["#globe", "#projects"]].forEach(function (pair) {
-      var after = $(pair[0]);
+    ["#about", "#globe"].forEach(function (sel) {
+      var after = $(sel);
       if (!after) return;
       var div = document.createElement("div");
       div.className = "divider reveal";
@@ -536,7 +498,6 @@
     renderNav();
     renderHero();
     renderAbout();
-    renderSecureScope();
     renderGlobe();
     renderProjects();
     renderCurrently();
