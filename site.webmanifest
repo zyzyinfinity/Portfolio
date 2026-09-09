@@ -1,0 +1,12 @@
+{
+  "name": "ZYZY — Izzati",
+  "short_name": "ZYZY",
+  "description": "The personal corner of Nurul Faizah Izzati (Izzati / Zyzy) — cybersecurity student, builder, curious human.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060606",
+  "theme_color": "#060606",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

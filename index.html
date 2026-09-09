@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ======================================================================
+       SEO  —  edit these to match your details
+       ==================================================================== -->
+  <title>Izzati (Zyzy) — cybersecurity student & future pentester</title>
+  <meta name="description" content="I'm Izzati, a Cyber Security student at Universiti Poly-Tech Malaysia (UPTM) — into web security, penetration testing, CTFs, and building things. My little corner of the internet." />
+  <meta name="author" content="Nurul Faizah Izzati" />
+  <link rel="canonical" href="https://ishzati.com/" />
+  <meta name="theme-color" content="#060606" />
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ZYZY" />
+  <meta property="og:title" content="Izzati (Zyzy)" />
+  <meta property="og:description" content="Cybersecurity student at UPTM — offensive security, web exploitation, CTFs, and building things." />
+  <meta property="og:url" content="https://ishzati.com/" />
+  <meta property="og:image" content="https://ishzati.com/assets/img/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Izzati (Zyzy)" />
+  <meta name="twitter:description" content="Cybersecurity student — offensive security, web, CTFs, and building things." />
+  <meta name="twitter:image" content="https://ishzati.com/assets/img/og.png" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Fonts: Fraunces (display serif) · Inter (body) · Space Mono (system labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&display=swap" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Structured data: helps search engines understand who this is -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nurul Faizah Izzati",
+    "alternateName": ["Izzati", "Zyzy"],
+    "url": "https://ishzati.com",
+    "jobTitle": "Cybersecurity Student",
+    "knowsAbout": ["Offensive Security", "Penetration Testing", "Web Security", "Capture The Flag", "Security Research"],
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "UPTM" }
+  }
+  </script>
+
+  <!-- If JavaScript is off: hide the curtain + the (JS-filled) shell, show the fallback -->
+  <noscript><style>
+    #intro, #siteHeader, #main, #siteFooter, #statusBadge, #fx { display: none !important; }
+  </style></noscript>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- cyberpunk atmosphere: scanlines + vignette (pure CSS, in styles.css) -->
+  <div id="fx" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       INTRO CURTAIN
+       Shown instantly (static) so there is no flash while the page wires up.
+       app.js fills in the animated letters and lifts it away.
+       ===================================================================== -->
+  <div id="intro">
+    <div class="intro__inner">
+      <p class="intro__col" id="introCol" aria-hidden="true"></p>
+      <p class="intro__payoff" id="introPayoff" hidden></p>
+    </div>
+    <!-- act 2: binary rain + name reveal (built by rain.js) -->
+    <div id="cyber" hidden></div>
+    <span class="intro__meta" id="introMeta">booting</span>
+    <button class="intro__skip" id="introSkip" type="button">skip intro &rarr;</button>
+  </div>
+
+  <!-- ========================================================================
+       HEADER / NAV  (revealed after the intro)
+       ===================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap site-header__inner">
+      <a class="wordmark" href="#top" id="wordmark">ZYZY</a>
+      <nav class="site-nav" id="siteNav" aria-label="Primary"></nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <span id="top"></span>
+
+    <!-- HERO — filled by app.js from SITE.hero -->
+    <section class="hero" id="hero" aria-labelledby="heroHeading"></section>
+
+    <!-- ABOUT — filled from SITE.about -->
+    <section class="section about" id="about" aria-labelledby="aboutHeading"></section>
+
+    <!-- SECURESCOPE — flagship, filled from SITE.securescope -->
+    <section class="section securescope" id="securescope" aria-labelledby="securescopeHeading"></section>
+
+    <!-- GLOBE — filled from SITE.globe -->
+    <section class="section globe-section" id="globe" aria-labelledby="globeHeading"></section>
+
+    <!-- PROJECTS — filled from SITE.projects -->
+    <section class="section projects" id="projects" aria-labelledby="projectsHeading"></section>
+
+    <!-- CURRENTLY / PERSONAL — filled from SITE.currently -->
+    <section class="section currently" id="currently" aria-labelledby="currentlyHeading"></section>
+
+    <!-- CONTACT — filled from SITE.contact -->
+    <section class="section contact" id="contact" aria-labelledby="contactHeading"></section>
+  </main>
+
+  <!-- FOOTER — filled from SITE.footer -->
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <!-- Tiny cybersecurity wink, desktop only -->
+  <div class="status-badge" id="statusBadge" aria-hidden="true"></div>
+
+  <!-- No-JavaScript fallback -->
+  <noscript>
+    <div class="noscript-card">
+      <h1>Izzati <span>— Nurul Faizah Izzati / Zyzy</span></h1>
+      <p>Hello! I'm Izzati, a Cyber Security student from Universiti Poly-Tech Malaysia (UPTM). I'm into cybersecurity, web security, penetration testing, and basically anything that lets me build, break, and figure out how things work. This is a little collection of the things I've built, learned, experimented with, and probably broken along the way.</p>
+      <p>
+        <a href="https://github.com/">GitHub</a> ·
+        <a href="https://www.linkedin.com/">LinkedIn</a> ·
+        <a href="mailto:hello@ishzati.com">Email</a>
+      </p>
+    </div>
+  </noscript>
+
+  <!-- Reusable leopard rosette (a broken ring of marks — used very sparingly) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="leo-spot" viewBox="-20 -20 40 40">
+      <g fill="currentColor">
+        <ellipse cx="0"   cy="-11" rx="3.3" ry="5.1" />
+        <ellipse cx="10"  cy="-3"  rx="3.1" ry="4.9" transform="rotate(52 10 -3)" />
+        <ellipse cx="6.5" cy="9.5" rx="2.9" ry="4.5" transform="rotate(116 6.5 9.5)" />
+        <ellipse cx="-6.5" cy="9.5" rx="2.9" ry="4.5" transform="rotate(-116 -6.5 9.5)" />
+        <ellipse cx="-10" cy="-3"  rx="3.1" ry="4.9" transform="rotate(-52 -10 -3)" />
+      </g>
+      <circle cx="0" cy="0" r="3.2" fill="var(--rose)" opacity="0.45" />
+    </symbol>
+  </svg>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/rain.js"></script>
+  <script src="assets/js/globe.js"></script>
+  <script src="assets/js/heroleo.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <!-- Safety net: if content.js / app.js ever fails to run, don't leave the
+       page stuck behind the curtain or with hidden sections. -->
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        if (document.documentElement.dataset.booted === "1") return;
+        var intro = document.getElementById("intro");
+        if (intro) intro.style.display = "none";
+        document.body.classList.add("intro-done");
+        var hidden = document.querySelectorAll(".reveal");
+        for (var i = 0; i < hidden.length; i++) hidden[i].classList.add("in");
+        if (window.console) console.warn("[zyzy] boot did not complete — showing content without animation");
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

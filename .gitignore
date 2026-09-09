@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
+.idea/
+node_modules/
+
+# Media / large binaries — keep out of git
+*.mov
+*.MOV
+*.mp4
+*.webm
+*.zip
